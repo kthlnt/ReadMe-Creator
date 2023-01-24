@@ -1,6 +1,11 @@
+//require other files 
+
 const inquirer = require('inquirer');
 const generateMarkdown = require("./generateMarkdown");
 const fs = require('fs');
+
+
+// questions user will answer 
 
 const questions = [
     {
@@ -61,12 +66,12 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, generateMarkdown(data))
 }
 
-// TODO: Create a function to initialize app
+// function to initialize app
 function init() {
     inquirer
         .prompt(
